@@ -1,3 +1,5 @@
+import time
+
 from selene import browser
 from selene import have
 #import time
@@ -21,3 +23,11 @@ def test_login_unluck():
     browser.element('.login-form [name=email]').type('anton200061@gmail.com').press_tab()
     browser.element('.login-form [name=password]').type('hyu').press_tab().press_enter()
     browser.element('.login-form .btn-success').should(have.exact_text('Неверный пароль'))
+
+
+def test_registration():
+    browser.open('https://school.qa.guru/cms/system/login')
+    browser.element('.btn-register').click()
+    browser.element('.register-form  .form-field-email .form-field-email').type('pupkin@yandex.ru').press_tab()
+    browser.element('.register-form .field-input-block .form-field-full_name').type('Епифан Гриша Владимирович')
+    #time.sleep(8)
