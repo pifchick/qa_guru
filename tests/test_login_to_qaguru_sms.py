@@ -28,4 +28,6 @@ def test_registration(main_fixture):
     browser.element('.register-form .field-input-block .form-field-full_name').type('Епифан Гриша Владимирович')
     browser.element('[id="xdget89548_1_1"]').should(have.text('Регистрация'))
     text1 = browser.element('[id="xdget89548_1_1"]').get(query.text)
+    assert text1 == 'Регистрация', f"Ошибка! Ожидали другое"
     assert text1 != 'Авторизация', f"Ошибка! Ожидали другое"
+
