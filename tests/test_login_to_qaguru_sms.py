@@ -1,4 +1,6 @@
-from selene import browser
+
+
+from selene import browser, query
 from selene import have
 #import time
 #time.sleep(3)
@@ -24,9 +26,6 @@ def test_registration(main_fixture):
     browser.element('.btn-register').click()
     browser.element('.register-form  .form-field-email .form-field-email').type('pupkin@yandex.ru').press_tab()
     browser.element('.register-form .field-input-block .form-field-full_name').type('Епифан Гриша Владимирович')
-#пока не работает browser.element('.html-content [href="/cms/system/contact"]').should(have.exact_texts('Обратная связь'))
-#надо пробовать assert browser.element('checkbox-text').should(have.exact_text('Я согласен на обработку моих персональных данных в соответствии с ')) !=  browser.element('checkbox-text').should(have.exact_text('обработку моих персональных данных в соответствии с '))
-
-
-
-    #time.sleep(8)
+    browser.element('[id="xdget89548_1_1"]').should(have.text('Регистрация'))
+    text1 = browser.element('[id="xdget89548_1_1"]').get(query.text)
+    assert text1 != 'Авторизация', f"Ошибка! Ожидали другое"

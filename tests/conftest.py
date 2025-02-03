@@ -9,6 +9,7 @@ from selene import have
 def browser_open_and_quit():
     browser.open('https://school.qa.guru/cms/system/login')
     yield
+    #browser.driver.delete_all_cookies() - надо доделать
     browser.quit()
 
 @pytest.fixture(scope= "session")
