@@ -4,8 +4,6 @@ from selene import have
 #browser.config.hold_driver_at_exit = True #Only selenium 4.5.0
 
 
-
-
 def test_login_pozitive(main_fixture):
     browser.element('.login-form [name=email]').type('anton200061@gmail.com').press_tab()
     browser.element('.login-form [name=password]').type('Anton366').press_tab().press_enter()

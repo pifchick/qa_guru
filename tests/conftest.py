@@ -1,6 +1,3 @@
-import time
-from pickle import FALSE
-from symtable import Class
 import pytest
 from selene import browser
 
