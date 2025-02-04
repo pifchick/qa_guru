@@ -10,4 +10,4 @@ def test_poisk(browser_yandex_open_and_quit):
 def test_git_commits():
     a = 1
     b = 2
-    a != b
+    a != b #говно, переделывай
