@@ -8,4 +8,6 @@ def test_poisk(browser_yandex_open_and_quit):
     assert text2 == 'По вашему запросу ничего не нашлось'
 
 def test_git_commits():
-    pass
+    a = 1
+    b = 2
+    a != b
