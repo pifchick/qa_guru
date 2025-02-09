@@ -8,8 +8,7 @@ def browser_timeout():
 
 @pytest.fixture(scope="function",  autouse=False)
 def main_fixture(browser_timeout, browser_open_and_quit):
-    browser.config.driver.set_window_size(1280, 1080)
-
+    browser.config.driver.set_window_size(1920, 1080)
 
 #for Chrome browser
 @pytest.fixture(scope="function", autouse=False)
