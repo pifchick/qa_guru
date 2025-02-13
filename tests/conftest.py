@@ -1,5 +1,3 @@
-from pickle import FALSE
-
 import pytest
 from selene import browser
 from selenium import webdriver
