@@ -5,7 +5,7 @@ from selenium import webdriver
 #For all test and browesrs
 @pytest.fixture(scope= "function", autouse=True)
 def browser_timeout():
-    browser.config.timeout = 8
+    browser.config.timeout = 2.0
 
 @pytest.fixture(scope="function",  autouse=False)
 def main_fixture(browser_timeout, browser_open_and_quit):
