@@ -1,10 +1,12 @@
+import time
+
 from selene import browser, query
 from selene import have
 
 #browser.config.hold_driver_at_exit = True #Only selenium 4.5.0
 
-
 def test_login_pozitive(main_fixture):
+    browser.open('https://school.qa.guru/cms/system/login')
     browser.element('.login-form [name=email]').type('anton200061@gmail.com').press_tab()
     browser.element('.login-form [name=password]').type('Anton366').press_tab().press_enter()
     browser.element('.gc-account-leftbar [title=Профиль]').click()
@@ -12,11 +14,13 @@ def test_login_pozitive(main_fixture):
     browser.element('[for=User_first_name]').should(have.text('Имя'))
 
 def test_login_unluck(main_fixture):
+    browser.open('https://school.qa.guru/cms/system/login')
     browser.element('.login-form [name=email]').type('anton200061@gmail.com').press_tab()
     browser.element('.login-form [name=password]').type('hyu').press_tab().press_enter()
     browser.element('.login-form .btn-success').should(have.exact_text('Неверный пароль'))
 
 def test_registration(main_fixture):
+    browser.open('https://school.qa.guru/cms/system/login')
     browser.element('.btn-register').click()
     browser.element('.register-form  .form-field-email .form-field-email').type('pupkin@yandex.ru').press_tab()
     browser.element('.register-form .field-input-block .form-field-full_name').type('Епифан Гриша Владимирович')
